@@ -1652,16 +1652,31 @@
     });
 
     // Event Booking
-    $('#eventForm').on('submit', function(e) {
+
+    $('#openModalBtn').click(function() {
+        $('#bookingModal').fadeIn();
+    })
+
+    $('.close').click(function() {
+        $('#bookingModal').fadeOut();
+    })
+
+    $(window).click(function(e) {
+        if ($(e.target).is('#bookingModal')) {
+            $('#bookingModal').fadeOut();
+        }
+    })
+
+    $('#bookingForm').on('submit', function(e) {
         e.preventDefault();
 
         $.ajax({
-            url: '/booking-event',
+            url: '/book-event',
             type: 'POST',
             data: $(this).serialize(),
             success: function(response) {
                 $('#responseMessage').text(response.message);
-                $('#eventForm')[0].reset();
+                $('#bookingForm')[0].reset();
             },
             error: function(xhr) {
                 $('#responseMessage').text('Something went wrong.');
