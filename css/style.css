@@ -1,8 +1,6 @@
 /* ================================================== */
 
-/* AIvent
-/* created by designesia
-
+/*
 @charset "utf-8";
 
 Table of content:
@@ -4364,7 +4362,7 @@ ol.ol-style-1.c2 li::before {
 
 /* ================================================== */
 
-#de-loader {
+/* #de-loader {
     position: fixed;
     z-index: 20000;
     top: 0;
@@ -4484,7 +4482,51 @@ ol.ol-style-1.c2 li::before {
     100% {
         transform: rotate(360deg);
     }
+} */
+
+#pre-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    width: 100%;
+    height: 100%;
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: .5s ease-out;
 }
+
+.logo-container {
+    margin-top: 20px;
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+
+.logo-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #4a5568;
+    overflow: hidden;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.loading-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: .3s ease-in-out;
+}
+
 
 /* progress bar */
 

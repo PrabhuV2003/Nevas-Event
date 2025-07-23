@@ -1628,4 +1628,25 @@
          grid_gallery();
      });
 
+        $(window).on('load', function() {
+            let progress = 0;
+            const interval = setInterval(function() {
+                progress += Math.floor(Math.random() * 10) + 5;
+                if (progress > 100) {
+                    progress = 100;
+                }
+                $('.loading-bar').css('width', progress + '%');
+
+                if (progress === 100) {
+                    clearInterval(interval);
+                    setTimeout(function() {
+                        $('#preloader').css('opacity', '0'); 
+                        setTimeout(function() {
+                            $('#preloader').hide();
+                        }, 500);
+                    }, 300); 
+                }
+            }, 100);
+        });
+
  })(jQuery);
