@@ -1686,26 +1686,31 @@
 
     // Cursor Following
 
+$(document).ready(function() { // Ensure the DOM is ready
     var follower = $('#cursorFllower');
     var mouseX = 0, mouseY = 0;
     var posX = 0, posY = 0;
+    var dampingFactor = 10; // Adjust this value for smoother or faster following
 
     $(document).mousemove(function(e) {
         mouseX = e.clientX;
-        mouseY = e.clentY;
+        mouseY = e.clientY; // Corrected typo: clentY to clientY
     });
 
     function animateFollower() {
-        posX += (mouseX - posX) / 0;
-        posY += (mouseY - posY) / 0;
+        posX += (mouseX - posX) / dampingFactor; // Corrected: Divided by dampingFactor
+        posY += (mouseY - posY) / dampingFactor; // Corrected: Divided by dampingFactor
+
         follower.css({
             left: posX - follower.width() / 2,
             top: posY - follower.height() / 2
         });
-        requestAnimationFrame(animateFollower)
+
+        requestAnimationFrame(animateFollower);
     }
 
     animateFollower();
+});
 
 
  })(jQuery);
