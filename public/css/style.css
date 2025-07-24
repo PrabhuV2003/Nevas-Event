@@ -14976,7 +14976,7 @@ img {
 
 .vdCard {
     width: 400px;
-    height: 500px;
+    height: 400px;
     flex-shrink: 0;
     border-radius: 1.5rem;
     margin-left: -11rem; /* This creates the overlapping effect */
@@ -14996,21 +14996,94 @@ img {
 
 /* These classes now apply relative transformations to the absolutely positioned .vdCard */
 .translate-x-10 {
-    transform: translateX(-300px) rotate(3deg); /* Combined with rotate for initial state */
+    transform: translateX(-300px) rotate(-3deg); /* Combined with rotate for initial state */
 }
 
 .translate-x-20 {
-    transform: translateX(-200px) rotate(6deg); /* Combined with rotate for initial state */
+    transform: translateX(-150px) rotate(3deg); /* Combined with rotate for initial state */
 }
 
 .translate-x-30 {
-    transform: translateX(-100px) rotate(9deg); /* Combined with rotate for initial state */
+    transform: translateX(0) rotate(-3deg); /* Combined with rotate for initial state */
 }
 
-/* Remove individual rotate classes as they are now combined with translate-x for simplicity */
-/* If you want more granular control, you can keep them separate and apply them to the .vdCard along with translate-x */
-/* For this example, I've combined them for clarity of their intended final position. */
-/* If you want different rotation for each card, ensure those are applied correctly via these classes. */
-/* The key is that these transform properties define the FINAL state after the GSAP 'from' animation. */
+.translate-x-40 {
+    transform: translateX(150px) rotate(6deg); /* Combined with rotate for initial state */
+}
+
+.translate-x-50 {
+    transform: translateX(300px) rotate(-6deg); /* Combined with rotate for initial state */
+}
+
+.translate-x-60 {
+    transform: translateX(450px) rotate(6deg); /* Combined with rotate for initial state */
+}
+
+.translate-x-70 {
+    transform: translateX(450px) rotate(-6deg); /* Combined with rotate for initial state */
+}
+
+@media (max-width: 1024px) {
+    .vdCard {
+        width: 350px;
+        height: 350px;
+    }
+    .translate-x-10 {
+        transform: translateX(-250px) rotate(-3deg);
+    }
+    .translate-x-20 {
+        transform: translateX(-125px) rotate(3deg);
+    }
+    .translate-x-30 {
+        transform: translateX(0) rotate(-3deg);
+    }
+    .translate-x-40 {
+        transform: translateX(125px) rotate(6deg);
+    }
+    .translate-x-50 {
+        transform: translateX(250px) rotate(6deg);
+    }
+    .translate-x-60 {
+        transform: translateX(375px) rotate(-6deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .pinBox {
+        flex-direction: column;
+    }
+    .translate-x-10,
+    .translate-x-20,
+    .translate-x-30,
+    .translate-x-40,
+    .translate-x-50,
+    .translate-x-60
+     {
+        transform: translateX(0);
+    }
+    .translate-x-10 {
+        transform:  rotate(3deg);
+    }
+    .translate-x-20 {
+        transform:  rotate(-3deg);
+    }
+    .translate-x-30 {
+        transform:  rotate(3deg);
+    }
+    .translate-x-40 {
+        transform:  rotate(-3deg);
+    }
+    .translate-x-50 {
+        transform:  rotate(3deg);
+    }
+    .translate-x-60 {
+        transform:  rotate(-3deg);
+    }
+    .vdCard {
+        width: 90%;
+        margin: auto;
+        height: 80vh;
+    }
+}
 
 /* YOUTUBE VIDEO END */
