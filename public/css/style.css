@@ -14828,6 +14828,7 @@ img {
 .newsletter {
     width: 90%;
     margin: auto;
+    margin-bottom: 150dvh;
     height: 300px;
     border: 1px solid var(--primary-color);
     border-radius: 20px;
@@ -14942,7 +14943,7 @@ img {
 .youtubeVideoSection {
     position: relative; /* Needs to be relative for absolute children */
     width: 100%;
-    height: 120dvh; /* Or adjust as needed to control the section's height */
+    height: 120dvh;
     overflow: hidden; /* To prevent content from spilling out during animations */
 }
 
