@@ -1684,4 +1684,28 @@
         })
     })
 
+    // Cursor Following
+
+    var follower = $('#cursorFllower');
+    var mouseX = 0, mouseY = 0;
+    var posX = 0, posY = 0;
+
+    $(document).mousemove(function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clentY;
+    });
+
+    function animateFollower() {
+        posX += (mouseX - posX) / 0;
+        posY += (mouseY - posY) / 0;
+        follower.css({
+            left: posX - follower.width() / 2,
+            top: posY - follower.height() / 2
+        });
+        requestAnimationFrame(animateFollower)
+    }
+
+    animateFollower();
+
+
  })(jQuery);
