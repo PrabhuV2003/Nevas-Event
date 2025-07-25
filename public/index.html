@@ -22,7 +22,16 @@
 
 <body class="dark-scheme">
 
-    <div id="wrapper">
+     <!-- page preloader begin -->
+
+     <div id="preloader">
+        <img src="assets/images/logo.png" alt="Logo" id="preloaderLogo">
+        <div id="loadingPercentage">0%</div>
+     </div>
+
+    <!-- page preloader close -->
+
+    <div id="wrapper"  style="display: none;">
 
         <div class="float-text show-on-scroll">
             <span><a href="#">Scroll to top</a></span>
@@ -34,21 +43,6 @@
         <div id="cursorFllower"></div>
 
         <!-- Cursor END -->
-
-        <!-- page preloader begin -->
-
-        <!-- <div id="de-loader"></div> -->
-
-        <!-- <div id="pre-loader" class="rounded-lg">
-            <div class="logo-container rounded-lg">
-                NEVAS.AI
-            </div>
-            <div class="logo-bar-container">
-                <div class="loading-bar"></div>
-            </div>
-        </div> -->
-
-        <!-- page preloader close -->
 
         <header class="transparent">
             <div class="container">
@@ -805,25 +799,7 @@
             </div>
         </section>
 
-    </div>
-
-    <!-- Booking Form Model -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Book Your Tickets</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta quaerat minus perferendis impedit ratione sunt, et</p>
-            <form id="bookingForm">
-                <input type="text" name="name" placeholder="Enter Your Name">
-                <input type="email" name="email" placeholder="Enter Your Email">
-                <input type="tel" name="phone" placeholder="Enter Your Phone Number">
-                <button type="submit"  class="btn-main fx-slide">Book Now</button>
-                <div id="responseMessage"></div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Youtube Videos Start -->
+            <!-- Youtube Videos Start -->
 
     <section class="youtubeVideoSection">
         <div class="yVideoTitle">
@@ -850,6 +826,24 @@
             </div>
         </div>
     </section>
+
+    </div>
+
+    <!-- Booking Form Model -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book Your Tickets</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta quaerat minus perferendis impedit ratione sunt, et</p>
+            <form id="bookingForm">
+                <input type="text" name="name" placeholder="Enter Your Name">
+                <input type="email" name="email" placeholder="Enter Your Email">
+                <input type="tel" name="phone" placeholder="Enter Your Phone Number">
+                <button type="submit"  class="btn-main fx-slide">Book Now</button>
+                <div id="responseMessage"></div>
+            </form>
+        </div>
+    </div>
 
     <!-- Youtube Videos End -->
 

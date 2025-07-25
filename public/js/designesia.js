@@ -1630,26 +1630,26 @@
 
 
     // Pre-Loader
-    $(window).on('load', function() {
-        let progress = 0;
-        const interval = setInterval(function() {
-            progress += Math.floor(Math.random() * 10) + 5;
-            if (progress > 100) {
-                progress = 100;
-            }
-            $('.loading-bar').css('width', progress + '%');
 
-            if (progress === 100) {
-                clearInterval(interval);
-                setTimeout(function() {
-                    $('#preloader').css('opacity', '0'); 
-                    setTimeout(function() {
-                        $('#preloader').hide();
-                    }, 500);
-                }, 300); 
+    $(document).ready(function () {
+        let precent = 0
+
+        $('#preloaderLogo').css('opacity', 1);
+        $('#loadingPercentage-percentage').css('opacity', 1);
+
+        let loading = setInterval(function () {
+            precent += 1;
+            $('#loadingPercentage').text(precent + '%');
+
+            if(precent >=100) {
+                clearInterval(loading);
+
+                $('#preloader').fadeOut(800, function() {
+                    $('#wrapper').fadeIn(800);
+                })
             }
-        }, 100);
-    });
+        }, 30)
+    })
 
     // Event Booking
 
@@ -1686,31 +1686,31 @@
 
     // Cursor Following
 
-$(document).ready(function() { // Ensure the DOM is ready
-    var follower = $('#cursorFllower');
-    var mouseX = 0, mouseY = 0;
-    var posX = 0, posY = 0;
-    var dampingFactor = 10; // Adjust this value for smoother or faster following
+    $(document).ready(function() { // Ensure the DOM is ready
+        var follower = $('#cursorFllower');
+        var mouseX = 0, mouseY = 0;
+        var posX = 0, posY = 0;
+        var dampingFactor = 10; // Adjust this value for smoother or faster following
 
-    $(document).mousemove(function(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY; // Corrected typo: clentY to clientY
-    });
-
-    function animateFollower() {
-        posX += (mouseX - posX) / dampingFactor; // Corrected: Divided by dampingFactor
-        posY += (mouseY - posY) / dampingFactor; // Corrected: Divided by dampingFactor
-
-        follower.css({
-            left: posX - follower.width() / 2,
-            top: posY - follower.height() / 2
+        $(document).mousemove(function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY; // Corrected typo: clentY to clientY
         });
 
-        requestAnimationFrame(animateFollower);
-    }
+        function animateFollower() {
+            posX += (mouseX - posX) / dampingFactor; // Corrected: Divided by dampingFactor
+            posY += (mouseY - posY) / dampingFactor; // Corrected: Divided by dampingFactor
 
-    animateFollower();
-});
+            follower.css({
+                left: posX - follower.width() / 2,
+                top: posY - follower.height() / 2
+            });
+
+            requestAnimationFrame(animateFollower);
+        }
+
+        animateFollower();
+    });
 
 
  })(jQuery);
