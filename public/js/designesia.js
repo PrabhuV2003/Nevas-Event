@@ -1631,26 +1631,26 @@
 
     // Pre-Loader
 
-    // $(document).ready(function () {
-    //     let precent = 0
+    $(document).ready(function () {
+        let precent = 0
 
-    //     $('#preloaderLogo').css('opacity', 1);
-    //     $('#loadingPercentage-percentage').css('opacity', 1);
+        $('#preloaderLogo').css('opacity', 1);
+        $('#loadingPercentage-percentage').css('opacity', 1);
 
-    //     let loading = setInterval(function () {
-    //         precent += 1;
-    //         $('#loadingPercentage').text(precent + '%');
+        let loading = setInterval(function () {
+            precent += 1;
+            $('#loadingPercentage').text(precent + '%');
 
-    //         if(precent >=100) {
-    //             clearInterval(loading);
+            if(precent >=100) {
+                clearInterval(loading);
 
-    //             $('#preloader').fadeOut(800, function() {
-    //                 $('#wrapper').fadeIn(500);
-    //                 $('.youtubeVideoSection').fadeIn(500)
-    //             })
-    //         }
-    //     }, 30)
-    // })
+                $('#preloader').fadeOut(800, function() {
+                    $(this).remove();
+                    $('#wrapper').fadeIn(500);
+                })
+            }
+        }, 30)
+    })
 
     // Event Booking
 
