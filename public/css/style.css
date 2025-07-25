@@ -14830,8 +14830,22 @@ img {
   opacity: 1;
 }
 
-@media (max-width: 1024px) {
-    
+@media (max-width: 768px) {
+    .newsletter {
+        flex-direction: column;
+    }
+    .newsletter div:nth-child(1) {
+        width: 100%
+    }
+    .newsletter div:nth-child(2) {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .newsletter {
+        height: fit-content
+    }
 }
 
 /* NEWS LETTER END */
