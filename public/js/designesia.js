@@ -1645,7 +1645,7 @@
                 clearInterval(loading);
 
                 $('#preloader').fadeOut(800, function() {
-                    $('#wrapper').fadeIn(750);
+                    $('#wrapper').fadeIn(500);
                 })
             }
         }, 30)
