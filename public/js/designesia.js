@@ -1646,6 +1646,7 @@
 
                 $('#preloader').fadeOut(800, function() {
                     $('#wrapper').fadeIn(500);
+                    $('.youtubeVideoSection').fadeIn(500)
                 })
             }
         }, 30)
