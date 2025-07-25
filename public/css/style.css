@@ -1431,8 +1431,8 @@ header.header-mobile {
     position: fixed !important;
     background: var(--heading-font-color);
     top: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 header.header-mobile .container {
@@ -14713,6 +14713,12 @@ img {
     z-index: 9999;
 }
 
+@media (max-width: 768px) {
+    #cursorFllower {
+        display: none
+    }
+}
+
 /* CURSOR END */
 
 /* NEWS LETTER START */
@@ -14915,6 +14921,14 @@ img {
 
 .gsapMargin {
     margin-bottom: 150dvh;
+}
+
+.youtubeExploreBtn{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 1024px) {
