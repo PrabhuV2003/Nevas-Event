@@ -14653,7 +14653,14 @@ img {
     gap: 20px;
 }
 
+.modal-content form div {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
 .modal-content form input {
+    width: 100%;
     padding: 10px;
     background-color: transparent;
     border: none;
@@ -14663,6 +14670,19 @@ img {
 }
 
 .modal-content form input::placeholder {
+    color: white;
+}
+
+.modal-content form textarea {
+    background-color: transparent;
+    padding: 10px;
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    border-radius: 5px;
+}
+
+.modal-content form textarea::placeholder {
     color: white;
 }
 
@@ -14813,25 +14833,24 @@ img {
 /* YOUTUBE VIDEO START */
 
 .youtubeVideoSection {
-    position: relative; /* Needs to be relative for absolute children */
+    position: relative; 
     width: 100%;
     height: 120dvh;
-    overflow: hidden; /* To prevent content from spilling out during animations */
+    overflow: hidden; 
 }
 
 .yVideoTitle {
     position: absolute;
-    top: 0; /* Position at the top of the section */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for perfect centering */
+    top: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 5vw;
-    z-index: 2; /* Ensure it's above the video cards if they overlap */
-    /* Add text here to see the title */
-    color: white; /* Example color */
-    font-size: 3em; /* Example size */
+    z-index: 2; 
+    color: white; 
+    font-size: 3em; 
 }
 
 .yVideoTitle .t1 {
@@ -14841,14 +14860,12 @@ img {
 .pinBox {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the video cards within pinBox */
+    justify-content: center; 
     width: 100%;
-    padding-left: 0; /* Removed padding-left to allow justify-content to work better */
+    padding-left: 0; 
     position: absolute;
-    bottom: 50vh; /* Adjust as needed to position the videos vertically */
-    /* top: 50%; */ /* Alternative to position vertically centered */
-    /* transform: translateY(-50%); */ /* For vertical centering with top: 50% */
-    z-index: 1; /* Ensure videos are below the title if title is positioned over them */
+    bottom: 50vh; 
+    z-index: 1; 
 }
 
 .vdCard {
@@ -14856,13 +14873,10 @@ img {
     height: 400px;
     flex-shrink: 0;
     border-radius: 1.5rem;
-    margin-left: -11rem; /* This creates the overlapping effect */
+    margin-left: -11rem; 
     overflow: hidden;
-    position: absolute; /* Changed from relative to absolute for precise positioning and overlap */
+    position: absolute; 
     border: 2px solid var(--primary-color);
-    /* Initial state for GSAP from animation */
-    /* transform properties are now defining the final resting position relative to pinBox */
-    /* The individual translate-x and rotate classes will apply relative to this absolute position */
 }
 
 .vdCard video {
@@ -14871,25 +14885,24 @@ img {
     object-fit: cover;
 }
 
-/* These classes now apply relative transformations to the absolutely positioned .vdCard */
 .translate-x-10 {
-    transform: translateX(-300px) rotate(-3deg); /* Combined with rotate for initial state */
+    transform: translateX(-300px) rotate(-3deg); 
 }
 
 .translate-x-20 {
-    transform: translateX(-150px) rotate(3deg); /* Combined with rotate for initial state */
+    transform: translateX(-150px) rotate(3deg); 
 }
 
 .translate-x-30 {
-    transform: translateX(0) rotate(-3deg); /* Combined with rotate for initial state */
+    transform: translateX(0) rotate(-3deg); 
 }
 
 .translate-x-40 {
-    transform: translateX(150px) rotate(6deg); /* Combined with rotate for initial state */
+    transform: translateX(150px) rotate(6deg); 
 }
 
 .translate-x-50 {
-    transform: translateX(300px) rotate(-6deg); /* Combined with rotate for initial state */
+    transform: translateX(300px) rotate(-6deg);
 }
 
 .translate-x-60 {
@@ -14968,3 +14981,56 @@ img {
 }
 
 /* YOUTUBE VIDEO END */
+
+@keyframes slides {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 30px 0px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before, .logos:after {
+  position: absolute;
+  top: 0;
+  content: '';
+  width: 250px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(16,20,53,0), rgb(16,20,53));
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(16,20,53,0), rgb(16,20,53));
+}
+
+.logo_items {
+  display: inline-block;
+  animation: 50s slides infinite linear;
+}
+
+.logo_items img {
+    width: 150px;
+    margin: auto 50px;
+}
+
+.logos:hover .logo_items {
+  animation-play-state: paused;
+}
+
+.logo_items img{
+  height: 100px;
+}
