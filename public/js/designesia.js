@@ -1635,7 +1635,7 @@
         let precent = 0
 
         $('#preloaderLogo').css('opacity', 1);
-        $('#loadingPercentage-percentage').css('opacity', 1);
+        $('#loadingPercentage').css('opacity', 1);
 
         let loading = setInterval(function () {
             precent += 1;
