@@ -68,12 +68,14 @@ app.post('/book-event', async(req, res) => {
     }
 
     try {
-        res.json({ message: 'Booking Successfull! Confirmation email sent.' })
-
+        
         await Promise.all([
             transporter.sendMail(mailToClient),
             transporter.sendMail(mailToAdmin)
         ]);
+        
+        res.json({ message: 'Booking Successfull! Confirmation email sent.' })
+        
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Error Sending Gmail.' })
