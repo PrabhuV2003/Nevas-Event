@@ -1,24 +1,35 @@
-# Node.js
-node_modules/
+# Node modules
+node_modules
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.nyc_output/
-coverage/
-.DS_Store
-.env
-.eslintcache
-/dist
-/build
-/tmp
-*.log
 
-# Editor/IDE specific
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# OS specific
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Optional: local server PID files
+pids
+*.pid
+*.seed
+
+# Optional: PM2 logs
+.pm2/
+
+# Optional: build folders (if you use any build step later)
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+
+# Optional: macOS system files
+*.DS_Store
