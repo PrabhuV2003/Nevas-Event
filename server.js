@@ -74,7 +74,7 @@ app.post('/book-event', async(req, res) => {
             transporter.sendMail(mailToAdmin)
         ]);
         
-        res.json({ message: 'Booking Successfull! Confirmation email sent.' })
+        res.json({ message: 'Booking Submit Successfully!' })
         
     } catch (error) {
         console.error(error);
@@ -84,4 +84,4 @@ app.post('/book-event', async(req, res) => {
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, ()=>{ console.log(`Server Running On http://localhost:${PORT}`);
-})
+});
