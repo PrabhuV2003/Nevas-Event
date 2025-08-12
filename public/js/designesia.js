@@ -59,7 +59,7 @@ if(header_autoshow==="on"){last_scroll_position=window.scrollY;if(new_scroll_pos
 new_scroll_position=last_scroll_position}
 var pixels=$(document).scrollTop();var pageHeight=$(document).height()-$(window).height();var progress=(100*pixels)/pageHeight;$("div.scrollbar").css("width",progress+"%");$("div.scrollbar-v").css("height",progress+"px")});$(function(){"use strict";var x=0;setInterval(function(){x-=1;$('.bg-loop').css('background-position',x+'px 0')},50)})});$(window).on('load',function(){jQuery('#de-loader').fadeOut(500);filter_gallery();load_owl();window.dispatchEvent(new Event('resize'));filter_gallery();masonry();$('.grid').isotope({itemSelector:'.grid-item'});grid_gallery()});$(document).ready(function(){let precent=0
 $('#preloaderLogo').css('opacity',1);$('#loadingPercentage').css('opacity',1);let loading=setInterval(function(){precent+=1;$('#loadingPercentage').text(precent+'%');if(precent>=100){clearInterval(loading);$('#preloader').fadeOut(800,function(){$(this).remove();$('#wrapper').fadeIn(500)})}},30)})
-$('#openModalBtn').click(function(){$('#bookingModal').fadeIn()})
+$('.openModalBtn').click(function(){$('#bookingModal').fadeIn()})
 $('.close').click(function(){$('#bookingModal').fadeOut()})
 $(window).click(function(e){if($(e.target).is('#bookingModal')){$('#bookingModal').fadeOut()}})
 $('#bookingForm').on('submit',function(e){e.preventDefault();$.ajax({url:'/book-event',type:'POST',data:$(this).serialize(),success:function(response){$('#responseMessage').text(response.message);$('#bookingForm')[0].reset()},error:function(xhr){$('#responseMessage').text('Something went wrong. Please try again!')}})})
