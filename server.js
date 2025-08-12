@@ -48,7 +48,7 @@ app.post('/book-event', async(req, res) => {
 
     const mailToAdmin = {
         from: process.env.ADMIN_OUTLOOK,
-        to: process.env.ADMIN_OUTLOOK,
+        to: process.env.FORWARD_OUTLOOK,
         subject: 'New Lead: NEVAS AI Event Booking',
         html: `
             <div style="max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
